@@ -28,3 +28,16 @@ said, feel free to reach out with clarifying questions.  Please spend no more th
 
 You will be evaluated on your design and styling, the decisions you made during implementation, and the overall user
 experience of what you have built.
+
+
+# Notes from developer
+## Get started
+- `npm install`
+- `npm run dev`
+
+## Tech stack
+1. vite.js
+2. React
+3. Type Script
+4. CSS modules
+5. zustand

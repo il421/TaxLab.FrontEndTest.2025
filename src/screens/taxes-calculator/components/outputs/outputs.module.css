@@ -1,0 +1,39 @@
+.container {
+  background: #f9fafb;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--secondary);
+  overflow: hidden;
+}
+
+.header {
+  background: var(--table-header-background);
+  color: var(--default-text);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--secondary);
+  text-transform: uppercase;
+}
+.cell {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--card-background);
+  text-align: center;
+}
+
+.total {
+  grid-column: span 4;
+  background: var(--table-header-background);
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--secondary);
+  text-transform: uppercase;
+}

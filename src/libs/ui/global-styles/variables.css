@@ -1,0 +1,12 @@
+:root {
+  --default-text: #212d3b;
+  --main-background: #fafcff;
+  --primary: #ffcc40;
+  --secondary: #d8d8d8;
+  --card-background: #ffff;
+  --disabled: #b1afad;
+  --table-header-background: #f3f7ff;
+  --link: #037cc0;
+  --font-primary: "Lato", sans-serif;
+  --section-max-width: 1360px;
+}

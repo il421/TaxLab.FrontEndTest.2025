@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  gap: 16px;
+}
+
+.button {
+  cursor: pointer;
+  color: var(--link);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.noData {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--default-text);
+}

@@ -1,4 +1,4 @@
-import type { TaxBand } from "./tax-band.type.ts";
+import type { TaxBand } from "../dtos/tax-band.type.ts";
 
 export type CalculateTax = {
   totalTax: number;

@@ -2,7 +2,7 @@ import type { FunctionComponent } from "react";
 import { useCoreStore } from "../../../../stores/use-core-store.ts";
 import styles from "./history.module.css";
 import { Button } from "../../../../libs/ui/components";
-import { toCurrency } from "../../../../libs/utils/currency.uitls.ts";
+import { toCurrency } from "../../../../libs/utils/currency.utils.ts";
 
 export const History: FunctionComponent = () => {
   const { history, restToHistory, setRates, setTempRates } = useCoreStore();

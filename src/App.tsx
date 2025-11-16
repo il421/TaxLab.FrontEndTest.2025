@@ -5,13 +5,16 @@ import "animate.css";
 
 import { Header } from "./core-components/Header.tsx";
 import { TaxesCalculatorScreen } from "./screens/taxes-calculator";
+import { ReactQueryProvider } from "./libs/providers/react-query.provider.tsx";
 
 function App() {
   return (
-    <main id="main">
-      <Header />
-      <TaxesCalculatorScreen />
-    </main>
+    <ReactQueryProvider>
+      <main id="main">
+        <Header />
+        <TaxesCalculatorScreen />
+      </main>
+    </ReactQueryProvider>
   );
 }
 

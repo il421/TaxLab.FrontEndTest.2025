@@ -1,5 +1,4 @@
-import { nzTaxBands } from "./calculate-tax.constants.ts";
-import type { TaxBand } from "./tax-band.type.ts";
+import type { TaxBand } from "../dtos/tax-band.type.ts";
 import type { CalculateTax } from "./calculate-tax.type.ts";
 
 /**
@@ -11,10 +10,9 @@ export const calculateTax = (
   rates: number,
   bands?: TaxBand[]
 ): CalculateTax => {
-  const _bands = bands ?? nzTaxBands;
   let totalTax = 0;
   const breakdown = [];
-
+  const _bands = bands ?? [];
   for (const band of _bands) {
     const bandStart = band.bandStart;
     const bandEnd = band.bandEnd ?? rates;

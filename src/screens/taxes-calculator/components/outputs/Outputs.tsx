@@ -2,10 +2,12 @@ import { Fragment, type FunctionComponent } from "react";
 import { useCoreStore } from "../../../../stores/use-core-store.ts";
 import { calculateTax, toCurrency } from "../../../../libs/utils";
 import styles from "./outputs.module.css";
+import { useBandsQuery } from "../../../../libs/queries/useBandsQuery.ts";
 
 export const Outputs: FunctionComponent = () => {
+  const { data } = useBandsQuery();
   const { rates } = useCoreStore();
-  const { breakdown, totalTax } = calculateTax(rates);
+  const { breakdown, totalTax } = calculateTax(rates, data);
 
   if (!rates) {
     return null;

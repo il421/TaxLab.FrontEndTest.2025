@@ -1,5 +1,5 @@
 import type { TaxBand } from "../dtos/tax-band.type.ts";
-import type { CalculateTax } from "./calculate-tax.type.ts";
+import type { CalculateTax } from "../dtos/calculate-tax.type.ts";
 
 /**
  * Calculates total tax for a given salary and tax bands.

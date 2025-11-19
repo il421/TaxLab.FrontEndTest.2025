@@ -1,3 +1,4 @@
 export enum QueriesKeys {
-  Bands = "Bands"
+  Bands = "Bands",
+  Taxes = "Taxes"
 }

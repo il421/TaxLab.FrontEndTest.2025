@@ -1,15 +1,16 @@
 import { Fragment, type FunctionComponent } from "react";
 import { useCoreStore } from "../../../../stores/use-core-store.ts";
-import { calculateTax, toCurrency } from "../../../../libs/utils";
+import { toCurrency } from "../../../../libs/utils";
 import styles from "./outputs.module.css";
 import { useBandsQuery } from "../../../../libs/queries/useBandsQuery.ts";
+import { useTaxesCalculationsQuery } from "../../../../libs/queries/useTaxesCalculationsQuery.ts";
 
 export const Outputs: FunctionComponent = () => {
-  const { data } = useBandsQuery();
+  const { data: bands = [] } = useBandsQuery();
   const { rates } = useCoreStore();
-  const { breakdown, totalTax } = calculateTax(rates, data);
+  const { data } = useTaxesCalculationsQuery({ rates, bands });
 
-  if (!rates) {
+  if (!rates || !data) {
     return null;
   }
 
@@ -21,7 +22,7 @@ export const Outputs: FunctionComponent = () => {
         <div className={styles.header}>Tax Rate %</div>
         <div className={styles.header}>Tax Collected</div>
 
-        {breakdown.map((b, i) => (
+        {data?.breakdown.map((b, i) => (
           <Fragment key={i}>
             <div className={styles.cell}>{toCurrency(b.bandStart)}</div>
             <div className={styles.cell}>
@@ -33,7 +34,7 @@ export const Outputs: FunctionComponent = () => {
         ))}
 
         <div className={styles.total}>
-          {`Total Tax: ${toCurrency(totalTax)}`}
+          {`Total Tax: ${toCurrency(data?.totalTax)}`}
         </div>
       </div>
     </div>
